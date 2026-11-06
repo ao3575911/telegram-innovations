@@ -1,0 +1,39 @@
+[Unit]
+Description=RallyPoint Telegram conditional commitment bot
+Documentation=https://core.telegram.org/bots/api
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=120
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=rallypoint
+Group=rallypoint
+WorkingDirectory=/opt/rallypoint
+EnvironmentFile=/etc/rallypoint.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/opt/rallypoint/.venv/bin/python -m telegram_innovation run
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=45
+StateDirectory=rallypoint
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+AmbientCapabilities=
+ReadWritePaths=/var/lib/rallypoint
+
+[Install]
+WantedBy=multi-user.target

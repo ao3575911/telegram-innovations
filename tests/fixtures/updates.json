@@ -1,0 +1,22 @@
+{
+  "create_group": {
+    "update_id": 700,
+    "message": {
+      "message_id": 61,
+      "date": 1793941200,
+      "from": {"id": 101, "is_bot": false, "first_name": "Example"},
+      "chat": {"id": -1001234567, "type": "supergroup", "title": "Example community"},
+      "text": "/pact 3 60m | Repair café on Saturday"
+    }
+  },
+  "private_start": {
+    "update_id": 701,
+    "message": {
+      "message_id": 62,
+      "date": 1793941201,
+      "from": {"id": 101, "is_bot": false, "first_name": "Example"},
+      "chat": {"id": 101, "type": "private"},
+      "text": "/start"
+    }
+  }
+}
